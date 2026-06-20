@@ -16,12 +16,13 @@ export interface FetchNotesResponse {
   totalPages: number;
 }
 
-interface CheckSessionResponse {
+export interface CheckSessionResponse {
   success: boolean;
 }
 
 const getCookieHeader = async (): Promise<string> => {
   const cookieStore = await cookies();
+
   return cookieStore.toString();
 };
 
@@ -66,21 +67,19 @@ export const fetchNoteById = async (noteId: string): Promise<Note> => {
   return response.data;
 };
 
-export const checkSession = async (): Promise<boolean> => {
-  try {
-    const cookieHeader = await getCookieHeader();
+export const checkSession = async (
+  cookieHeader?: string
+): Promise<AxiosResponse<CheckSessionResponse>> => {
+  const currentCookieHeader = cookieHeader ?? (await getCookieHeader());
 
-    const response: AxiosResponse<CheckSessionResponse> =
-      await api.get<CheckSessionResponse>('/auth/session', {
-        headers: {
-          Cookie: cookieHeader,
-        },
-      });
+  const response: AxiosResponse<CheckSessionResponse> =
+    await api.get<CheckSessionResponse>('/auth/session', {
+      headers: {
+        Cookie: currentCookieHeader,
+      },
+    });
 
-    return response.data.success;
-  } catch {
-    return false;
-  }
+  return response;
 };
 
 export const getMe = async (): Promise<User> => {

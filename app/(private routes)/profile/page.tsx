@@ -1,18 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getMe } from '@/lib/api/serverApi';
 import css from './page.module.css';
-
-// Temporary local getMe implementation — replace with the actual server API call.
-async function getMe() {
-  // Replace this stub with your real serverApi call, e.g.:
-  // return await fetchServerSideCurrentUser();
-  return {
-    username: 'Unknown',
-    email: 'unknown@example.com',
-    avatar: 'https://ac.goit.global/fullstack/react/avatar-default.jpg',
-  };
-}
 
 export const dynamic = 'force-dynamic';
 
