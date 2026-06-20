@@ -1,0 +1,52 @@
+.mainContent {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 64px 16px;
+}
+
+.formTitle {
+  margin: 0 0 24px;
+  font-size: 32px;
+  color: #111827;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  background-color: #ffffff;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submitButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.error {
+  margin: 0;
+  color: #dc2626;
+}

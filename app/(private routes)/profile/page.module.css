@@ -1,0 +1,51 @@
+.mainContent {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 64px 16px;
+}
+
+.profileCard {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  background-color: #ffffff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.formTitle {
+  margin: 0;
+  font-size: 32px;
+  color: #111827;
+}
+
+.editProfileButton {
+  border-radius: 8px;
+  padding: 8px 12px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #374151;
+}
